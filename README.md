@@ -46,9 +46,9 @@ This is a simple Solidity smart contract that implements the Rock-Paper-Scissors
 
 ## Contributors
 
-- [Your Name](https://github.com/gethsun1) - Developer
-- [Contributor 1](https://github.com/evansmburu) - Testing and Feedback
-- [Contributor 2](https://github.com/raynor) - Code Review and Suggestions
+- [Gethsun Misesi](https://github.com/gethsun1) - Developer
+- [Evans Mburu ](https://github.com/evansmburu) - Testing and Feedback
+- [Ray Allan](https://github.com/raynor) - Code Review and Suggestions
 
 ## License
 
