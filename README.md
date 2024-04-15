@@ -1,49 +1,55 @@
-## Getting Started
+# Rock-Paper-Scissors Smart Contract
 
-Create a project using this example:
+## Overview
 
-```bash
-npx thirdweb create --contract --template hardhat-javascript-starter
-```
+This is a simple Solidity smart contract that implements the Rock-Paper-Scissors game on the Ethereum blockchain. Players can create games, play moves, and resolve outcomes through this contract.
 
-You can start editing the page by modifying `contracts/Contract.sol`.
+## Smart Contract Details
 
-To add functionality to your contracts, you can use the `@thirdweb-dev/contracts` package which provides base contracts and extensions to inherit. The package is already installed with this project. Head to our [Contracts Extensions Docs](https://portal.thirdweb.com/contractkit) to learn more.
+### Variables
 
-## Building the project
+- `enum Move`: Defines the possible moves in the game (Rock, Paper, Scissors).
+- `enum GameResult`: Represents the possible game results (Player1Wins, Player2Wins, Draw).
+- `struct Game`: Stores information about each game, including players, moves, result, and game status.
+- `mapping(address => uint256) public balances`: Tracks player balances for winnings.
+- `mapping(bytes32 => Game) public games`: Stores ongoing games mapped by a unique identifier.
 
-After any changes to the contract, run:
+### Functions
 
-```bash
-npm run build
-# or
-yarn build
-```
+- `createGame(address player2) external payable`: Allows a player to create a new game with a specified opponent.
+- `playGame(bytes32 gameId, Move move) external`: Lets players submit their moves in an ongoing game.
+- `resolveGame(bytes32 gameId) internal`: Determines the game outcome and distributes winnings accordingly.
+- `withdraw() external`: Enables players to withdraw their winnings from the contract.
 
-to compile your contracts. This will also detect the [Contracts Extensions Docs](https://portal.thirdweb.com/contractkit) detected on your contract.
+## How to Use
 
-## Deploying Contracts
+1. Deploy the smart contract on an Ethereum network.
+2. Interact with the contract using a compatible Ethereum wallet or development environment.
+3. Players can create games, play moves, and withdraw their winnings through the provided functions.
 
-When you're ready to deploy your contracts, just run one of the following command to deploy you're contracts:
+## Development Environment
 
-```bash
-npm run deploy
-# or
-yarn deploy
-```
+- Solidity version: ^0.8.0
+- Compiler: solc (Solidity compiler)
+- Ethereum network: Rinkeby testnet (for testing and development)
+- Development tools: Remix IDE, Truffle Suite, Ganache
 
-## Releasing Contracts
+## Deployment
 
-If you want to release a version of your contracts publicly, you can use one of the followings command:
+- Deploy the contract using Remix IDE, Truffle, or any compatible deployment tool.
+- Use the deployed contract address to interact with it from Ethereum wallets or DApps.
 
-```bash
-npm run release
-# or
-yarn release
-```
+## Testing
 
-## Join our Discord!
+- Use Remix IDE or Truffle Suite for testing contract functionality.
+- Write unit tests to cover various scenarios like creating games, playing moves, and resolving outcomes.
 
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
-# rps
-# rps
+## Contributors
+
+- [Your Name](https://github.com/gethsun1) - Developer
+- [Contributor 1](https://github.com/evansmburu) - Testing and Feedback
+- [Contributor 2](https://github.com/raynor) - Code Review and Suggestions
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
